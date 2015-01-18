@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
-  <body>
-    <script>
-
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
-      });
-
-    </script>
+  <body class="grey lighten-2">
+    <div class="navbar-fixed">
+      <nav class="blue-grey">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">Twittler</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="collection col s3 card" style="padding: 0px">
+          <a href="#!" class="filter white-text collection-item active blue-grey">All Tweets</a>
+          <a href="#!" class="filter black-text collection-item">douglascalhoun</a>
+          <a href="#!" class="filter black-text collection-item">sharksforcheap</a>
+          <a href="#!" class="filter black-text collection-item">mracus</a>
+          <a href="#!" class="filter black-text collection-item">shawndrost</a>
+        </div>
+        <div class="col s9" id="tweets">
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/data_generator.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
