@@ -51,6 +51,8 @@ $(document).ready(function(){
     }
   }
 
+
+
   //Display tweets from database
   function displayTweet(user, message, timestamp){
     $('<div class="tweet card white">\
@@ -62,7 +64,7 @@ $(document).ready(function(){
            <span class="right grey-text text-darken-1">' + timestamp + '</span>\
            <p class="grey-text text-darken-1">' + message + '</p>\
          </div>\
-    </div>')
+      </div>')
        .hide().prependTo('#tweets').slideDown("slow")
   }
 
@@ -70,4 +72,11 @@ $(document).ready(function(){
   function removeTweets(){
     $(".tweet").remove();
   }
+
+  var myFirebaseRef = new Firebase("https://proxytest.firebaseio.com/");
+
+  myFirebaseRef.set({"key":"value"})
+  myFirebaseRef.set({"kdsadey":"sadsdas"})
+
+
 });
