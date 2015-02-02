@@ -4,30 +4,24 @@ $(document).ready(function(){
   var displayedTweets = 0;
   var shouldTweets = server.length;
   var filter = "All Tweets";
-
 /*---------------------------------------------------*/
-
   setInterval(clock, 1000);
   $(".filter").on("click", function(){
     changeFilter($(this).text());
     $(".filter").removeClass("blue-grey").removeClass("white-text").addClass("black-text").addClass("white")
     $(this).removeClass("white").addClass("blue-grey").addClass("white-text");
   })
-
 /*---------------------------------------------------*/
-
   //Runs once a second
   function clock(){
     pullTweets();
   }
-
 //Applies a filter
   function changeFilter(newfilter){
     filter = newfilter;
     removeTweets();
     displayedTweets = 0;
   }
-
 //Pulls tweets from server
   function pullTweets(){
     if (filter === "All Tweets"){
@@ -50,9 +44,6 @@ $(document).ready(function(){
       }
     }
   }
-
-
-
   //Display tweets from database
   function displayTweet(user, message, timestamp){
     $('<div class="tweet card white">\
@@ -67,16 +58,8 @@ $(document).ready(function(){
       </div>')
        .hide().prependTo('#tweets').slideDown("slow")
   }
-
 //Remove all tweets to apply filter
   function removeTweets(){
     $(".tweet").remove();
   }
-
-  var myFirebaseRef = new Firebase("https://proxytest.firebaseio.com/");
-
-  myFirebaseRef.set({"key":"value"})
-  myFirebaseRef.set({"kdsadey":"sadsdas"})
-
-
 });
